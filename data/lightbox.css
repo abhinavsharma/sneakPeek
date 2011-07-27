@@ -15,10 +15,10 @@
 .white_content {
 	display: none;
 	position: fixed;
-	top: 10%;
-	left: 10%;
-	width: 75%;
-	height: 75%;
+	top: 6%;
+	left: 7%;
+	width: 85%;
+	height: 85%;
 	padding: 16px;
 	border: 4px solid grey;
   -moz-border-radius: 10px 10px;;
