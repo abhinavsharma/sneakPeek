@@ -48,6 +48,8 @@ function handleClick(e, url) {
 */
 
 function handleClick(e) {
+  if (e.shiftKey)
+    e.preventDefault;
   let link = e.target;
   let str = link.toString();
   while (link.parentNode) { 
@@ -60,7 +62,6 @@ function handleClick(e) {
   console.log(str)
   if (isWebURL(str) && e.shiftKey) {
     console.log("firing");
-    e.preventDefault();
     previewLink(str);
   }
 }
