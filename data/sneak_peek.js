@@ -48,10 +48,19 @@ function handleClick(e, url) {
 */
 
 function handleClick(e) {
-  let link = e.originalTarget.toString();
-  if (isWebURL(link) && e.shiftKey) {
+  let link = e.originalTarget;
+  let str = link.toString();
+  while (link.parentNode) { 
+    if (isWebURL(str))
+      break;
+    str = link.parentNode.toString();
+    link = link.parentNode;
+  }
+  console.log(str)
+  if (isWebURL(str) && e.shiftKey) {
+    console.log("firing");
     e.preventDefault();
-    previewLink(link);
+    previewLink(str);
   }
 }
 
@@ -59,7 +68,7 @@ function isWebURL(url) {
   return (url && (/^http/).test(url));
 }
 
-document.addEventListener("click" , handleClick, false);
+document.addEventListener("mousedown" , handleClick, true);
 
 /*
 let links = document.getElementsByTagName("a");
