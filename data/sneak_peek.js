@@ -48,9 +48,10 @@ function handleClick(e, url) {
 */
 
 function handleClick(e) {
-  let link = e.originalTarget;
+  let link = e.target;
   let str = link.toString();
   while (link.parentNode) { 
+    console.log(str)
     if (isWebURL(str))
       break;
     str = link.parentNode.toString();
